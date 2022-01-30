@@ -1,0 +1,43 @@
+
+.full{
+    background-color: #252839;
+}
+.text{   
+    align-items: center;
+}
+
+.msg{
+    margin-left: 450px;
+    margin-top: 10px;
+    margin-bottom: 13px;
+}
+
+.heading{
+    color: white;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 140px;
+    width: 100%;
+    
+}
+p{
+    color: white;
+    font-size: 26px;
+    font-family: 'Dancing Script';
+    margin-left: 520px;
+}
+.bg{
+    background-color: white;
+    
+}
+label{
+    color: #252839;
+}
+button{
+    background-color: #252839;
+    color: white;
+    
+}
+button:hover{
+    background-color: #252839;
+    color: white}

@@ -1,0 +1,30 @@
+.container{
+    margin-bottom: 60px;
+}
+.form-control.ng-touched.ng-invalid {
+    border:1px solid red;
+   }
+   .form-control.ng-touched.ng-valid {
+    border:1px solid green;
+   }
+.register{
+    margin-right: 15px;
+}   
+
+.login {
+    text-align:right;
+    color: white
+    
+}
+.login :hover{
+    cursor: pointer;
+}
+/* .body{
+    background-image: url(	data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…nCQ+06rsM8M+7crgu1m1RcpulcTqb/wBXXwUV3I+uxn//2Q==);
+    width: 100%; display: block; height:690px
+} */
+/* img{
+    width: 899px;
+    aspect-ratio: auto 899 / 445;
+    height: 445px;
+} */

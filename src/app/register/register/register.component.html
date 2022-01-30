@@ -1,0 +1,126 @@
+<div class="container body " style="width: 50%;">
+  <div class="card bg-dark text-white m-3 mt-5">
+    <h5 class="card-header text-center">Signup Form</h5>
+
+    <div class="card-body">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+        <div class="row">
+          <div class="form-group col-6">
+            <label>First Name</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            formControlName = "firstName"
+            [ngClass]="{ 'is-Invalid': submitted && h.firstName.errors }"
+            />
+            <div *ngIf="submitted && h.firstName.errors" class="text-warning">
+              <div *ngIf=" h.firstName.errors?.['required']">
+                First Name is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-6">
+            <label>Last Name</label>
+            <input 
+            formControlName = "lastName"
+            [ngClass]="{ 'is-Invalid': submitted && h.lastName.errors }"
+            type="text" class="form-control" />
+            <div *ngIf="submitted && h.lastName.errors" class="text-warning">
+              <div *ngIf=" h.lastName.errors?.['required']">
+                Last Name is required
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <br>
+        
+        <div class="row">
+        <div class="form-group" class="col-6">
+          <label>Email</label>
+          <input
+          formControlName = "email"
+          [ngClass]="{ 'is-Invalid': submitted && h.email.errors }" 
+          type="text" class="form-control" />
+          <div *ngIf="submitted && h.email.errors" class="text-warning">
+            <div *ngIf=" h.email.errors?.['email']"> </div>
+                 Valid Email is required  
+          </div>
+        </div>
+        <div class="form-group" class="col-6">
+          <label>Phone No.</label>
+          <input
+          formControlName = "phone"
+          [ngClass]="{ 'is-Invalid': submitted && h.phone.errors }" 
+          type="text" class="form-control" />
+          <div *ngIf="submitted && h.phone.errors" class="text-warning">
+            <div *ngIf=" h.phone.errors?.['phone'] && h.phone.errors.minlength"> </div>
+                 Valid Phone no. is required  
+          </div>
+        </div>
+      </div>
+           
+        <br>
+
+        <div class="row">
+          <div class="form-group" class="col-6">
+            <label>Password</label>
+            <input 
+            formControlName = "password"
+            [ngClass]="{ 'is-Invalid': submitted && h.password.errors }"  
+            type="password" class="form-control" />
+            <div  *ngIf="submitted && h.password.errors" class="text-warning">
+              <div *ngIf= " h.password.errors?.['required']" >Password is required</div>
+              <div *ngIf= "h.password.errors.minlength">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+          <div class="form-group" class="col-6">
+            <label>Confirm Password</label>
+            <input 
+            formControlName = "confirmPassword"
+            [ngClass]="{ 'is-Invalid': submitted && h.confirmPassword.errors }"
+            type="password" class="form-control" />
+            <div  *ngIf="submitted && h.confirmPassword.errors" class="text-warning">
+              <div *ngIf= " h.confirmPassword.errors?.['required']" >Confirm Password is required</div>
+              <div *ngIf= "h.confirmPassword.errors.mustmatch">
+                Password mismatch
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        
+        <div class="form-group form-check">
+          <input 
+          formControlName = "acceptTandC"
+          [ngClass]="{ 'is-Invalid': submitted && h.acceptTandC.errors }"
+          type="checkbox" id="acceptTerms" class="form-check-input" />
+          <label for="acceptTerms" class="form-check-label"
+            >Accept Terms & Conditions</label
+          >
+          <div *ngIf="submitted && h.acceptTandC.errors" class="text-warning">
+            Accept Ts & Cs is required
+          </div>
+        </div>
+        
+        
+        
+        <div class="text-center">
+          <button class="btn btn-success btn-m px-3 mt-4 register">
+            Register
+          </button>
+          <button (click)="onReset" class="btn btn-success btn-m px-4 mt-4" type="reset">
+            Reset
+          </button>
+        </div>
+        <br>
+        <p class="login">Already have an account ? <span class="login" (click)="onClick()">LogIn</span></p>
+       
+
+      </form>
+    </div>
+  </div>
+</div>
+

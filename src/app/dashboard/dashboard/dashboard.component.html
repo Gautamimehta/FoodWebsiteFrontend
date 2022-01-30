@@ -1,0 +1,76 @@
+<div class="conatiner mt-3 tableContent">
+    <h2>Food Menu</h2>
+    <a [routerLink]="'dashboard/add/0'" class="btn addFood">Add Food Item</a><br>
+    <mat-label>Search: </mat-label>
+  <mat-form-field>
+      <input class="search" matInput (keyup)="applyFilter($event)" #filterValue >
+  </mat-form-field>
+    <table mat-table [dataSource]= "dataSource" matSort
+           class="table table-striped table-bordered" >
+        <thead class="thead-dark text-center">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef MatInputModule mat-sort-header
+                class="text-center colname">Id</th>
+            <td mat-cell *matCellDef="let element" class="text-center"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header 
+            class="text-center colname">Name</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Price</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.price | currency:'INR'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="cookTime">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Cook-Time</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.cookTime}} min </td>
+        </ng-container>
+        <ng-container matColumnDef="origin">
+            <th mat-header-cell *matHeaderCellDef  class="text-center colname">Origins</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.origins}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Stars">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Stars</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.stars}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Image-Url">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Image-Url</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.imageUrl}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Tags">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Tags</th>
+            <td mat-cell *matCellDef="let element" class="itemname"> {{element.tags}} </td>
+        </ng-container>
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Edit</th>
+            <tr *ngFor="let food of foods">
+                <td mat-cell *matCellDef="let element">
+                    <a [routerLink]="['dashboard/edit',food.id]" class="itemname">
+                        <i class="fa fa-pencil" style="color: rgb(31, 27, 27);"></i>
+                    </a>
+                </td>
+            </tr>
+        </ng-container>
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef class="text-center colname">Delete</th>
+            <tr *ngFor="let food of foods">
+                <td mat-cell *matCellDef="let element">
+                    <Button class="btn" (click)="onDelete(food.id)">
+                        <i class="fa fa-trash"></i>
+                    </Button>
+                </td>
+            </tr>
+        </ng-container>
+        </thead>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons 
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+
+    
+</div>

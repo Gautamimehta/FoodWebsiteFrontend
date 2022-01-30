@@ -1,0 +1,66 @@
+
+<head>
+    <<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
+  </head>
+  
+  <div class="full">
+  
+  <div class="heading">
+    We're Here
+  </div>
+  <p>
+    Our door is always open up for a good cup of coffee.
+  </p>
+  
+  <div class="container" style="background-color: #252839; padding-bottom: 15px;">
+      <div>
+        <div class="msg" style="width: 30%;">
+          <div class="card bg text-white">
+      
+        
+            <div class="card-body">
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+        
+                <div class="form-group" class="col-12">
+                  <label><strong>Name</strong>
+                    </label>
+                  <input
+                  formControlName = "name"
+                  [ngClass]="{ 'is-Invalid': submitted && h.name.errors }" 
+                  type="text" class="form-control" />
+                  <div *ngIf="submitted && h.name.errors" class="text-warning">
+                    <div *ngIf=" h.name.errors?.['required']"> </div>
+                         Name is required  
+                  </div>
+                </div>
+                   
+                <br>
+        
+                  <div class="form-group" class="col-12">
+                    <label><strong>Message</strong></label>
+                    <textarea
+                    formControlName = "msg"
+                    [ngClass]="{ 'is-Invalid': submitted && h.msg.errors }"  
+                    type="text-box" class="form-control" > </textarea>
+                    <div  *ngIf="submitted && h.msg.errors" class="text-warning">
+                      <div *ngIf= " h.msg.errors?.['required']" >Message is required</div>
+                    </div>
+                  </div>
+        
+                <div class="text-center">
+                  <button class="btn btn-m px-3 mt-4 register">
+                    Send Message
+                  </button>
+                </div>
+                <br>
+                
+              </form>
+            </div>
+        </div>
+        </div>
+      </div>
+    
+  </div>
+  </div>

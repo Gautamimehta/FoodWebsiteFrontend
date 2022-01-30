@@ -1,0 +1,54 @@
+
+ <div class="row">
+  <div class="col-7 firstcol">
+    <img src="assets\bg 1.jpg" alt="">
+  </div>
+  <div class="col-5 secondcol">
+
+        <h3 class="card-header text-center text-white heading"> Log-In  </h3>
+    
+        <div class="card-body ">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form formq">
+    
+            <div class="form-group" class="col-12">
+              <label>Email</label>
+              <input
+              formControlName = "email"
+              [ngClass]="{ 'is-Invalid': submitted && h.email.errors }" 
+              type="text" class="form-control" />
+              <div *ngIf="submitted && h.email.errors" class="text-warning">
+                <div *ngIf=" h.email.errors?.['email']"> </div>
+                     Valid Email is required  
+              </div>
+            </div>
+               
+            <br>
+    
+              <div class="form-group" class="col-12">
+                <label>Password</label><br>
+                <input 
+                formControlName = "password"
+                [ngClass]="{ 'is-Invalid': submitted && h.password.errors }"  
+                type="password" class="form-control" />
+                <div  *ngIf="submitted && h.password.errors" class="text-warning">
+                  <div *ngIf= " h.password.errors?.['required']" >Password is required</div>
+                  <div *ngIf= "h.password.errors.minlength">
+                    Password must be at least 6 characters
+                  </div>
+                </div>
+              </div>
+    
+            <div class="text-center">
+              <button class="login" (click)="onSubmit()"class="btn text-white btn-m px-3 mt-4 register">
+                Log In
+              </button>
+            </div>
+            <br>
+          </form>
+        </div>
+    </div>
+</div>
+
+
+
+

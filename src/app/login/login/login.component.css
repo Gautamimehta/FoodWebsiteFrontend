@@ -1,0 +1,65 @@
+.row{
+    background-image: url("C:\Users\Gautami\Desktop\angular\angdemo-jwt\src\assets\bg 1.jpg");
+    width:214.5vh;
+    /* background-color: yellow; */
+}
+.firstcol{
+    /* background-color: chartreuse; */
+    height:82vh;
+}
+img{
+    margin-left: 160px;
+    margin-top: 45px;
+    border-radius: 100%;
+    width:600px;
+    height: 500px;
+}
+.secondcol{
+    background-color: rgb(244, 243, 247);
+    background-image: url("C:\Users\Gautami\Desktop\angular\angdemo-jwt\src\assets\bg 5.jpg");
+}
+.formq{
+    margin-top:10px;
+    /* background-color: green; */
+    width: 50vh;
+    margin-left: 130px;
+    color: white;
+}
+.container{
+    margin-top: 100px;
+    width: 100%;
+    /* height: 100%; */
+    margin-right: 80px;
+     background-color: red;
+}
+.me{
+    margin-right: 200px;
+    background-color: red;
+    height: 60vh;
+}
+
+
+.heading{
+    margin-top: 90px;
+}
+
+
+
+
+
+/* .container{
+    background-color: red;
+} */
+.login {
+    text-align:right;
+    color: white;
+    font-size:10px;
+    
+}
+.login :hover{
+    cursor: pointer;
+}
+/* .text{
+    
+    align-items: center;
+} */
