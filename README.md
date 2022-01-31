@@ -1,6 +1,9 @@
 # FoodWebsiteFrontend
 A Food Website created using Angular
 
+## Store
+This project was generated with Angular CLI
+
 ## Run the app
 
 ### Development mode
